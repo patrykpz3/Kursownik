@@ -34,6 +34,8 @@
             this.ShowSchemaButton = new System.Windows.Forms.Button();
             this.AuthorsDataSet = new System.Data.DataSet();
             this.dataSet2 = new System.Data.DataSet();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.przyciskEuro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuthorsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -84,11 +86,31 @@
             // 
             this.dataSet2.DataSetName = "NewDataSet";
             // 
+            // textBox2
+            // 
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox2.Location = new System.Drawing.Point(410, 39);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(238, 20);
+            this.textBox2.TabIndex = 4;
+            // 
+            // przyciskEuro
+            // 
+            this.przyciskEuro.Location = new System.Drawing.Point(297, 346);
+            this.przyciskEuro.Name = "przyciskEuro";
+            this.przyciskEuro.Size = new System.Drawing.Size(75, 23);
+            this.przyciskEuro.TabIndex = 5;
+            this.przyciskEuro.Text = "Euro";
+            this.przyciskEuro.UseVisualStyleBackColor = true;
+            this.przyciskEuro.Click += new System.EventHandler(this.przyciskEuro_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 388);
+            this.Controls.Add(this.przyciskEuro);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.ShowSchemaButton);
             this.Controls.Add(this.ReadXmlButton);
             this.Controls.Add(this.textBox1);
@@ -111,6 +133,8 @@
         private System.Windows.Forms.Button ShowSchemaButton;
         private System.Data.DataSet AuthorsDataSet;
         private System.Data.DataSet dataSet2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button przyciskEuro;
     }
 }
 

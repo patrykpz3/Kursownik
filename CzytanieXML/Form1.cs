@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.XPath;
 
 namespace CzytanieXML
 {
@@ -32,6 +34,36 @@ namespace CzytanieXML
             System.IO.StringWriter swXML = new System.IO.StringWriter();
             AuthorsDataSet.WriteXmlSchema(swXML);
             textBox1.Text = swXML.ToString();
+            
+        }
+
+        private void przyciskEuro_Click(object sender, EventArgs e)
+        {
+            // XPathDocument document = new XPathDocument(@"F:\test\authors.xml");
+            // XPathNavigator navigator = document.CreateNavigator();
+            // XPathNodeIterator nodes = navigator.Select("ExchangeRatesTable/Rates/Rate");
+            // while (nodes.MoveNext())
+            // {
+            //     textBox2.Text = nodes.Current.Name;
+            //}
+
+            XmlDocument XmlDoc = new XmlDocument();
+            try
+            {
+                XmlDoc.Load(@"F:\test\authors.xml");
+                int Count = XmlDoc.GetElementsByTagName("Rate").Count;
+
+                for (int i = 0; i < Count; i++)
+                {
+                    textBox2.Text = XmlDoc.GetElementsByTagName("Currency").Item(0).InnerText;
+                }
+            }
+            catch (XmlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
     }
 }
